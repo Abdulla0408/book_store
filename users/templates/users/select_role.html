@@ -1,0 +1,17 @@
+{% extends 'sellers/dashboard.html' %}
+
+{% block content %}
+<html>
+<head>
+    <title>Select Role</title>
+</head>
+<body>
+    <h1>Select Your Role</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'sellers/dashboard.html' %}
+
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">Full name</th>
+      <th scope="col">Phone number</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for users in user %}
+  <tr>
+      <th scope="row">{{users.id}}</th>
+      <td>{{users.username}}</td>
+      <td>{{users.first_name}} {{users.last_name}}</td>
+      <td>{{users.phone_number}}</td>
+      <td><a href="{% url 'users:select_role' %}" class="btn btn-outline-info">Edit</a>
+      <a href="{% url 'users:user_delete' users.id %}" class="btn btn-outline-danger">Delate</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
+<!--aka views.py da yana : qoyib kettingiz / ni orniga-->
